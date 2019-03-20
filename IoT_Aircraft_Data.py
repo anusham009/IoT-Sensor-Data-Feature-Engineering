@@ -105,7 +105,7 @@ relevant_features
 # ******************Using Recursive Feature Elimination**************************8
 from sklearn.feature_selection import RFE
 from sklearn.linear_model import LogisticRegression
-# Select top n features : Have just chosen 10 features here
+# Select top n features : Have just chosen 15 features here
 # Feature extraction
 X = df_train.loc[:, df_train.columns != 'label_pred']
 Y= df_train.loc[:,'label_pred']
@@ -117,7 +117,7 @@ print("Num Features: %s" % (fit.n_features_))
 print("Selected Features: %s" % (fit.support_),X.columns)
 print("Feature Ranking: %s" % (fit.ranking_))
 
-## Here we have top 10 features as 
+## Here we have top 15 features as 
 ## cycle,s1,s3,s4,s7,s8,s9,s11,s12,s13,s14,s17,s18,s20,ttf
 
 # ********************* Principal component Analysis **********************
