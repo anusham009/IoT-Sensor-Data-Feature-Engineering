@@ -1,7 +1,4 @@
-#print("Welcome to" , end = ' ')  
-#print("GeeksforGeeks", end = ' ') 
-
-# Importing the necessary packages to perform EDA and PCA
+# Importing the necessary packages 
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
