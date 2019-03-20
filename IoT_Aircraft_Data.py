@@ -11,11 +11,9 @@ from sklearn.ensemble import RandomForestClassifier
 from boruta import BorutaPy
 from sklearn.ensemble import ExtraTreesClassifier
 
-
 # Read the train, test and truth data on to dataframe
 url_train = 'http://azuremlsamples.azureml.net/templatedata/PM_train.txt'
 df_train = pd.read_csv(url_train, header=None, sep='\s+')
-
 url_test = 'http://azuremlsamples.azureml.net/templatedata/PM_test.txt'
 df_test = pd.read_csv(url_test, header=None, sep='\s+')
 
