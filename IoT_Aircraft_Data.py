@@ -27,8 +27,8 @@ url_truth = 'http://azuremlsamples.azureml.net/templatedata/PM_truth.txt'
 df_truth = pd.read_csv(url_truth, header=None, sep='\s+')
 
 # The data as such do not have columns 
-# Note the column names are added separately and the domain expertise 
-#for arriving at the target variable are adapted from sample kaggle data of same kind
+# Note the column names are added separately and the domain expertise for arriving at the target variable 
+#are adapted from sample kaggle data of same kind
 col_names = ['id','cycle','setting1','setting2','setting3','s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15','s16','s17','s18','s19','s20','s21']
 df_train.columns=col_names
 df_train.head()
@@ -74,7 +74,7 @@ df_train['label_pred'] = df_train['ttf'].apply(lambda x: 1 if x <= period else 0
 df_train.head()
 
 # Now the data has 27 dependent variables and 1 target variable 'ttf'
-# The problem in hand is to predict the time to failure of a machine 
+# The problem in hand is to predict whether an engine will fail or not in the next n days (n=30 here)
 
 # Check for null values
 # No columns have null values in train and test
@@ -85,11 +85,11 @@ df_test.isnull().any()
 # Hence no outlier treatement is done on the data as the outlier values are not consulted with domain expert.
 df_train.boxplot()
 
-# ************* Feature Enginering (Feature Selection ) ******************
+# ************* Feature Enginering  ******************
 
 # There is no more data clearning steps performed here as these are sensor readings with no null values and genuine outliers
 # Feature engineering is performed using multiple ways
-# Correlation ,univariate selection based on statistical tests ,Random forest classifier and PCA are the methods tried here
+# Correlation ,Recursive Feature Elimination, PCA,Select K best ,Borutapy and Random forest classifier are the methods tried here
 # Correlation of all variables 
 
 #************************* Correlation with target variable ***************8
